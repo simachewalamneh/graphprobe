@@ -1,0 +1,8 @@
+model,setting,mean,std
+MLP,features only,0.84,0.0224
+GCN,true graph,0.975,0.0
+GCN,test-time edges removed 25%,0.975,0.0
+GCN,test-time edges removed 50%,0.975,0.0177
+GCN,test-time edges removed 75%,0.915,0.0379
+GCN,test-time edges removed 100%,0.825,0.0
+GCN,retrained on random graph,0.72,0.1081

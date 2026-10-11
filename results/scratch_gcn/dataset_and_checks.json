@@ -1,0 +1,15 @@
+{
+  "nodes": 200,
+  "undirected_edges": 897,
+  "edge_homophily": 0.8862876296043396,
+  "feature_dim": 3,
+  "splits": {
+    "train": 120,
+    "val": 40,
+    "test": 40
+  },
+  "manual_layer_match": true,
+  "manual_max_abs_err": 1.7881393432617188e-07,
+  "permutation_equivariance": true,
+  "permutation_max_abs_err": 9.5367431640625e-07
+}
