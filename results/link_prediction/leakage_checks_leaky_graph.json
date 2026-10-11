@@ -1,0 +1,13 @@
+{
+  "val_links_absent_from_mp_graph": false,
+  "val_reverse_links_absent_from_mp_graph": false,
+  "test_links_absent_from_mp_graph": false,
+  "test_reverse_links_absent_from_mp_graph": false,
+  "mp_graph_is_symmetric": true,
+  "mp_graph_equals_train_links_both_directions": false,
+  "positive_splits_disjoint": true,
+  "negatives_have_no_self_links": true,
+  "negatives_not_observed_positives": true,
+  "val_test_negatives_disjoint": true,
+  "negatives_unique": true
+}
