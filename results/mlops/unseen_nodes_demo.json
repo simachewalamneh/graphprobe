@@ -1,0 +1,9 @@
+{
+  "approved_version": "v1",
+  "n_unseen": 150,
+  "edges_removed_from_training_graph": 1030,
+  "existing_nodes_acc (training-graph context)": 0.7941176470588235,
+  "unseen_acc, full context (features + all incident edges)": 0.8466666666666667,
+  "unseen_acc, 50% of their edges missing": 0.7666666666666667,
+  "unseen_acc, isolated (features only)": 0.7266666666666667
+}

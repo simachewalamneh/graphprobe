@@ -1,0 +1,7 @@
+{
+  "status_code": 200,
+  "model_version_api": "v1",
+  "model_version_offline": "v1",
+  "labels_identical": true,
+  "max_abs_prob_diff": 0.0
+}

@@ -1,0 +1,111 @@
+{
+  "thresholds(null: mean+3*std over 100 random half-splits)": {
+    "mean_degree_rel_change": {
+      "threshold": 0.24106926244888555,
+      "p99": 0.2149720917038671,
+      "null_mean": 0.07798282797602545,
+      "null_std": 0.0543621448242867
+    },
+    "isolated_fraction_abs_change": {
+      "threshold": 0.0628537184689083,
+      "p99": 0.056285081240768156,
+      "null_mean": 0.02062038404726736,
+      "null_std": 0.014077778140546983
+    },
+    "embedding_centroid_cosine_distance": {
+      "threshold": 0.001297779201960868,
+      "p99": 0.001317156553268435,
+      "null_mean": 0.0004301321506500244,
+      "null_std": 0.0002892156837702811
+    },
+    "mean_embedding_norm_rel_change": {
+      "threshold": 0.03319325331001035,
+      "p99": 0.03173676694403455,
+      "null_mean": 0.010244197995397102,
+      "null_std": 0.007649685104871082
+    }
+  },
+  "normal (new random half of same data)": [
+    {
+      "statistic": "mean_degree_rel_change",
+      "value": 0.07372,
+      "threshold": 0.24107,
+      "ALERT": false
+    },
+    {
+      "statistic": "isolated_fraction_abs_change",
+      "value": 0.0288,
+      "threshold": 0.06285,
+      "ALERT": false
+    },
+    {
+      "statistic": "embedding_centroid_cosine_distance",
+      "value": 0.00023,
+      "threshold": 0.0013,
+      "ALERT": false
+    },
+    {
+      "statistic": "mean_embedding_norm_rel_change",
+      "value": 0.01493,
+      "threshold": 0.03319,
+      "ALERT": false
+    }
+  ],
+  "graph drift (50% of edges removed)": [
+    {
+      "statistic": "mean_degree_rel_change",
+      "value": 0.46314,
+      "threshold": 0.24107,
+      "ALERT": true
+    },
+    {
+      "statistic": "isolated_fraction_abs_change",
+      "value": 0.21344,
+      "threshold": 0.06285,
+      "ALERT": true
+    },
+    {
+      "statistic": "embedding_centroid_cosine_distance",
+      "value": 0.00022,
+      "threshold": 0.0013,
+      "ALERT": false
+    },
+    {
+      "statistic": "mean_embedding_norm_rel_change",
+      "value": 0.04477,
+      "threshold": 0.03319,
+      "ALERT": true
+    }
+  ],
+  "embedding drift (60% of vocabulary columns vanish)": [
+    {
+      "statistic": "mean_degree_rel_change",
+      "value": 0.07372,
+      "threshold": 0.24107,
+      "ALERT": false
+    },
+    {
+      "statistic": "isolated_fraction_abs_change",
+      "value": 0.0288,
+      "threshold": 0.06285,
+      "ALERT": false
+    },
+    {
+      "statistic": "embedding_centroid_cosine_distance",
+      "value": 0.01956,
+      "threshold": 0.0013,
+      "ALERT": true
+    },
+    {
+      "statistic": "mean_embedding_norm_rel_change",
+      "value": 0.16517,
+      "threshold": 0.03319,
+      "ALERT": true
+    }
+  ],
+  "cross_version_embedding_comparison": {
+    "mean |corr| of same-index coordinates": 0.3425457981515362,
+    "cosine of centroids (raw coordinates)": 0.973680853843689,
+    "linear CKA (rotation/permutation invariant)": 0.9342880249023438
+  }
+}
