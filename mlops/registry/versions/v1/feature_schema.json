@@ -1,0 +1,7 @@
+{
+  "description": "raw binary bag-of-words per node",
+  "dtype": "float32",
+  "edges": "[[src,dst],...] undirected",
+  "n_features": 1433,
+  "node_ids": "row index of the features matrix"
+}

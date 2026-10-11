@@ -1,0 +1,142 @@
+{
+  "approved": "v1",
+  "events": [
+    {
+      "action": "register",
+      "time": "2026-10-11T01:15:29+00:00",
+      "version": "v1"
+    },
+    {
+      "action": "promote_attempt",
+      "allowed": true,
+      "rule": "first_model",
+      "time": "2026-10-11T01:15:29+00:00",
+      "version": "v1"
+    },
+    {
+      "action": "register",
+      "time": "2026-10-11T01:15:51+00:00",
+      "version": "v2"
+    },
+    {
+      "action": "promote_attempt",
+      "allowed": false,
+      "rule": "insufficient_improvement",
+      "time": "2026-10-11T01:15:51+00:00",
+      "version": "v2"
+    },
+    {
+      "action": "register",
+      "time": "2026-10-11T01:16:06+00:00",
+      "version": "v3"
+    },
+    {
+      "action": "promote_attempt",
+      "allowed": false,
+      "rule": "regression",
+      "time": "2026-10-11T01:16:06+00:00",
+      "version": "v3"
+    }
+  ],
+  "history": [
+    "v1"
+  ],
+  "versions": {
+    "v1": {
+      "gate": {
+        "allowed": true,
+        "approved": null,
+        "candidate": 0.7939598869551528,
+        "delta": null,
+        "metric": "val_macro_f1",
+        "reason": "first model: 0.7940 >= floor 0.7",
+        "rule": "first_model",
+        "time": "2026-10-11T01:15:29+00:00"
+      },
+      "hyperparameters": {
+        "dropout": 0.5,
+        "epochs": 200,
+        "hidden": 16,
+        "lr": 0.01,
+        "wd": 0.0005
+      },
+      "metrics": {
+        "test_accuracy_seen": 0.7941176470588235,
+        "train_seconds": 19.458254760999807,
+        "unseen_accuracy": 0.8466666666666667,
+        "val_accuracy": 0.802,
+        "val_data_id": "25ebcda8ad9b",
+        "val_macro_f1": 0.7939598869551528
+      },
+      "mlflow_run_id": "a1a6599602c74787a776a6b746479c76",
+      "path": "versions/v1",
+      "registered_at": "2026-10-11T01:15:29+00:00",
+      "run_name": "gcn_h16_baseline",
+      "status": "approved"
+    },
+    "v2": {
+      "gate": {
+        "allowed": false,
+        "approved": 0.7939598869551528,
+        "candidate": 0.7940792793705475,
+        "delta": 0.00011939241539460355,
+        "metric": "val_macro_f1",
+        "reason": "+0.0001 < required 0.005",
+        "rule": "insufficient_improvement",
+        "time": "2026-10-11T01:15:51+00:00"
+      },
+      "hyperparameters": {
+        "dropout": 0.5,
+        "epochs": 200,
+        "hidden": 64,
+        "lr": 0.01,
+        "wd": 0.0005
+      },
+      "metrics": {
+        "test_accuracy_seen": 0.8070588235294117,
+        "train_seconds": 20.936841552999795,
+        "unseen_accuracy": 0.8533333333333334,
+        "val_accuracy": 0.8,
+        "val_data_id": "25ebcda8ad9b",
+        "val_macro_f1": 0.7940792793705475
+      },
+      "mlflow_run_id": "0c75f58a19804da39f5b4b1d3342903e",
+      "path": "versions/v2",
+      "registered_at": "2026-10-11T01:15:51+00:00",
+      "run_name": "gcn_h64_wide",
+      "status": "rejected"
+    },
+    "v3": {
+      "gate": {
+        "allowed": false,
+        "approved": 0.7939598869551528,
+        "candidate": 0.7901671521796327,
+        "delta": -0.0037927347755201124,
+        "metric": "val_macro_f1",
+        "reason": "-0.0038 is worse than the approved model",
+        "rule": "regression",
+        "time": "2026-10-11T01:16:06+00:00"
+      },
+      "hyperparameters": {
+        "dropout": 0.8,
+        "epochs": 200,
+        "hidden": 32,
+        "lr": 0.005,
+        "wd": 0.0005
+      },
+      "metrics": {
+        "test_accuracy_seen": 0.8188235294117647,
+        "train_seconds": 15.044804773000124,
+        "unseen_accuracy": 0.86,
+        "val_accuracy": 0.804,
+        "val_data_id": "25ebcda8ad9b",
+        "val_macro_f1": 0.7901671521796327
+      },
+      "mlflow_run_id": "79fdb780bdb848c89a58d1788218148d",
+      "path": "versions/v3",
+      "registered_at": "2026-10-11T01:16:06+00:00",
+      "run_name": "gcn_h32_lowlr_highdrop",
+      "status": "rejected"
+    }
+  }
+}
