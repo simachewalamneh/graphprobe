@@ -1,0 +1,26 @@
+{
+  "nodes": 2708,
+  "directed_edge_entries": 10556,
+  "undirected_edges": 5278,
+  "features_per_node": 1433,
+  "mean_words_per_document": 18.17,
+  "classes": 7,
+  "class_counts": [
+    351,
+    217,
+    418,
+    818,
+    426,
+    298,
+    180
+  ],
+  "mean_degree": 3.898,
+  "max_degree": 168,
+  "isolated_nodes": 0,
+  "edge_homophily": 0.81,
+  "train/val/test": [
+    140,
+    500,
+    1000
+  ]
+}
