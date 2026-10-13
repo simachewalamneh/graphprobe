@@ -1,5 +1,3 @@
-"""From-scratch GCN (pure PyTorch tensor ops), MLP baseline, dataset generator,
-training loop and correctness checks. No ready-made GNN layers are used."""
 import random
 
 import numpy as np
@@ -14,7 +12,7 @@ def set_seed(s: int) -> None:
     torch.manual_seed(s)
 
 
-# --------------------------------------------------------------------------- data
+# Prepare Dataset
 def make_dataset(n=200, p_in=0.08, p_out=0.01, sep=0.6, noise=1.0, seed=0):
     """Synthetic graph where structure carries information beyond node features.
 
@@ -43,7 +41,7 @@ def make_dataset(n=200, p_in=0.08, p_out=0.01, sep=0.6, noise=1.0, seed=0):
     return torch.tensor(X, dtype=torch.float32), torch.tensor(y), ei, masks
 
 
-# --------------------------------------------------------------------------- GCN
+#GCN
 def prep_graph(ei: torch.Tensor, n: int):
     """Add self-loops and compute symmetric degree normalisation 1/sqrt(d_i d_j)
     for every (src -> dst) message. Returns (src, dst, norm)."""
@@ -99,7 +97,7 @@ class MLP(nn.Module):
         return self.l2(x)
 
 
-# ----------------------------------------------------------------------- training
+# training
 def acc(out, y, m) -> float:
     return (out[m].argmax(1) == y[m]).float().mean().item()
 
@@ -127,7 +125,7 @@ def train_model(model, x, y, g, masks, epochs=200, lr=0.01, wd=5e-4):
     return best
 
 
-# ------------------------------------------------------------------ correctness checks
+# correctness checks
 def manual_layer_node(x, ei, W, b, i):
     """Independent hand calculation of one GCN layer output for node i."""
     deg = lambda j: int((ei[1] == j).sum()) + 1  # incoming neighbours + self-loop
@@ -163,7 +161,7 @@ def check_permutation(model, x, ei, seed=0):
     return torch.allclose(o1[perm], o2, atol=1e-5), (o1[perm] - o2).abs().max().item()
 
 
-# ------------------------------------------------------------------ graph ablations
+# graph ablations
 def drop_edges(ei, frac, seed):
     """Remove a fraction of undirected edges (both directions together)."""
     u = ei[:, ei[0] < ei[1]]

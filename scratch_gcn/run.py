@@ -1,6 +1,3 @@
-"""Assignment: build and verify a GCN from scratch.
-Run:  python -m scratch_gcn.run
-Writes tables/plots/checks to results/scratch_gcn/."""
 import json
 from pathlib import Path
 
