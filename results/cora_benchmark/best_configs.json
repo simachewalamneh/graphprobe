@@ -1,10 +1,10 @@
 {
   "mlp": {
     "kind": "mlp",
-    "hidden": 64,
+    "hidden": 16,
     "dropout": 0.8,
-    "lr": 0.005,
-    "wd": 0.0
+    "lr": 0.02,
+    "wd": 0.0005
   },
   "gcn": {
     "kind": "gcn",
@@ -15,17 +15,17 @@
   },
   "sage": {
     "kind": "sage",
-    "hidden": 32,
-    "dropout": 0.5,
-    "lr": 0.02,
-    "wd": 0.005
-  },
-  "gat": {
-    "kind": "gat",
     "hidden": 16,
     "dropout": 0.8,
     "lr": 0.02,
-    "wd": 0.0005,
-    "heads": 8
+    "wd": 0.0005
+  },
+  "gat": {
+    "kind": "gat",
+    "hidden": 64,
+    "dropout": 0.2,
+    "lr": 0.01,
+    "wd": 0.005,
+    "heads": 4
   }
 }

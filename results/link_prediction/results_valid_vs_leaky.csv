@@ -1,9 +1,9 @@
 setting,method,test_auc,test_ap,runs
 valid,common-neighbours,0.7086 ± 0.0000,0.7068 ± 0.0000,1
 LEAKY (cn over all links),common-neighbours,0.7619 ± 0.0000,0.7593 ± 0.0000,1
-valid,GCN+dot,0.9277 ± 0.0013,0.9335 ± 0.0031,3
-LEAKY eval only,GCN+dot,0.9744 ± 0.0020,0.9722 ± 0.0031,3
-LEAKY train+eval,GCN+dot,0.9750 ± 0.0015,0.9730 ± 0.0018,3
-valid,GCN+mlp,0.9416 ± 0.0007,0.9493 ± 0.0010,3
-LEAKY eval only,GCN+mlp,0.9958 ± 0.0003,0.9949 ± 0.0008,3
-LEAKY train+eval,GCN+mlp,0.9960 ± 0.0005,0.9946 ± 0.0010,3
+valid,GCN+dot,0.9277 ± 0.0014,0.9334 ± 0.0032,3
+LEAKY eval only,GCN+dot,0.9743 ± 0.0020,0.9721 ± 0.0032,3
+LEAKY train+eval,GCN+dot,0.9750 ± 0.0016,0.9730 ± 0.0019,3
+valid,GCN+mlp,0.9422 ± 0.0003,0.9501 ± 0.0005,3
+LEAKY eval only,GCN+mlp,0.9960 ± 0.0005,0.9952 ± 0.0009,3
+LEAKY train+eval,GCN+mlp,0.9959 ± 0.0004,0.9947 ± 0.0010,3
