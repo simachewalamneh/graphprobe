@@ -20,7 +20,7 @@ def _save(out, name, obj):
     (out / name).write_text(json.dumps(obj, indent=2, default=float))
 
 
-# ------------------------------------------------------------------ unseen nodes
+# unseen nodes
 def unseen_demo(reg, snap, out):
     pred = reg.load_predictor()
     tg = make_training_graph(snap, 150, 0)
@@ -47,7 +47,7 @@ def unseen_demo(reg, snap, out):
     _save(out, "unseen_nodes_demo.json", res)
 
 
-# ------------------------------------------------------------------------ drift
+# drift
 def drift_demo(reg, snap, out):
     pred = reg.load_predictor()
     x, ei = snap["x"], snap["edge_index"]
@@ -86,7 +86,7 @@ def drift_demo(reg, snap, out):
     _save(out, "drift_demo.json", out_rows)
 
 
-# ------------------------------------------------------------------ consistency
+#  consistency
 def _subgraph(snap, k=300, seed=0):
     nodes = np.sort(np.random.default_rng(seed).choice(snap["x"].shape[0], k, replace=False))
     return drift.induced(snap["x"], snap["edge_index"], nodes)
@@ -110,7 +110,7 @@ def consistency_demo(reg, snap, out):
     _save(out, "consistency_demo.json", res)
 
 
-# ------------------------------------------------------------- failure handling
+# failure handling
 def failure_demo(reg, snap, out):
     from fastapi.testclient import TestClient
     from mlops.service import create_app

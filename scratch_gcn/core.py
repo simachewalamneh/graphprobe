@@ -59,7 +59,7 @@ class GCNLayer(nn.Module):
     def __init__(self, i: int, o: int):
         super().__init__()
         self.W = nn.Parameter(torch.empty(i, o))
-        nn.init.xavier_uniform_(self.W)
+        nn.init.xavier_uniform_(self.W)  # weights reasonable initial values to support stable optimization.
         self.b = nn.Parameter(torch.zeros(o))
 
     def forward(self, x, g):

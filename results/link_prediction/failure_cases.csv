@@ -1,11 +1,11 @@
 kind,u,v,score,train_common_neighbours,deg_u,deg_v,same_topic_posthoc
-false_positive (negative scored high),210,356,8.3772,0,10,4,True
-false_positive (negative scored high),102,1783,6.7279,1,7,2,True
-false_positive (negative scored high),711,2151,5.8633,0,9,3,False
-false_positive (negative scored high),1699,2088,5.5985,0,3,2,True
-false_positive (negative scored high),1107,1863,5.024,0,5,2,True
-false_negative (true link scored low),1004,1489,-14.961,0,1,0,False
-false_negative (true link scored low),350,656,-12.4165,0,12,0,True
-false_negative (true link scored low),1003,2607,-9.8749,0,2,0,False
-false_negative (true link scored low),833,1678,-8.3477,0,5,1,True
-false_negative (true link scored low),611,2690,-8.207,0,0,0,True
+false_positive (negative scored high),210,356,7.6281,0,10,4,True
+false_positive (negative scored high),102,1783,6.4952,1,7,2,True
+false_positive (negative scored high),625,1701,5.4397,0,1,60,True
+false_positive (negative scored high),711,2151,5.3808,0,9,3,False
+false_positive (negative scored high),1699,2088,5.2012,0,3,2,True
+false_negative (true link scored low),1004,1489,-14.283,0,1,0,False
+false_negative (true link scored low),350,656,-12.8421,0,12,0,True
+false_negative (true link scored low),1003,2607,-9.9926,0,2,0,False
+false_negative (true link scored low),611,2690,-8.9537,0,0,0,True
+false_negative (true link scored low),833,1678,-8.6073,0,5,1,True

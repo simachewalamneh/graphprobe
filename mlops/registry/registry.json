@@ -36,6 +36,90 @@
       "rule": "regression",
       "time": "2026-10-11T01:16:06+00:00",
       "version": "v3"
+    },
+    {
+      "action": "register",
+      "time": "2026-10-14T16:36:59+00:00",
+      "version": "v4"
+    },
+    {
+      "action": "promote_attempt",
+      "allowed": false,
+      "rule": "tie",
+      "time": "2026-10-14T16:36:59+00:00",
+      "version": "v4"
+    },
+    {
+      "action": "register",
+      "time": "2026-10-15T03:41:53+00:00",
+      "version": "v5"
+    },
+    {
+      "action": "promote_attempt",
+      "allowed": false,
+      "rule": "tie",
+      "time": "2026-10-15T03:41:53+00:00",
+      "version": "v5"
+    },
+    {
+      "action": "register",
+      "time": "2026-10-15T03:42:09+00:00",
+      "version": "v6"
+    },
+    {
+      "action": "promote_attempt",
+      "allowed": false,
+      "rule": "insufficient_improvement",
+      "time": "2026-10-15T03:42:09+00:00",
+      "version": "v6"
+    },
+    {
+      "action": "register",
+      "time": "2026-10-15T03:42:24+00:00",
+      "version": "v7"
+    },
+    {
+      "action": "promote_attempt",
+      "allowed": false,
+      "rule": "regression",
+      "time": "2026-10-15T03:42:24+00:00",
+      "version": "v7"
+    },
+    {
+      "action": "register",
+      "time": "2026-10-15T09:09:51+00:00",
+      "version": "v8"
+    },
+    {
+      "action": "promote_attempt",
+      "allowed": false,
+      "rule": "tie",
+      "time": "2026-10-15T09:09:51+00:00",
+      "version": "v8"
+    },
+    {
+      "action": "register",
+      "time": "2026-10-15T09:10:08+00:00",
+      "version": "v9"
+    },
+    {
+      "action": "promote_attempt",
+      "allowed": false,
+      "rule": "insufficient_improvement",
+      "time": "2026-10-15T09:10:08+00:00",
+      "version": "v9"
+    },
+    {
+      "action": "register",
+      "time": "2026-10-15T09:10:21+00:00",
+      "version": "v10"
+    },
+    {
+      "action": "promote_attempt",
+      "allowed": false,
+      "rule": "regression",
+      "time": "2026-10-15T09:10:21+00:00",
+      "version": "v10"
     }
   ],
   "history": [
@@ -73,6 +157,38 @@
       "registered_at": "2026-10-11T01:15:29+00:00",
       "run_name": "gcn_h16_baseline",
       "status": "approved"
+    },
+    "v10": {
+      "gate": {
+        "allowed": false,
+        "approved": 0.7939598869551528,
+        "candidate": 0.7901671521796327,
+        "delta": -0.0037927347755201124,
+        "metric": "val_macro_f1",
+        "reason": "-0.0038 is worse than the approved model",
+        "rule": "regression",
+        "time": "2026-10-15T09:10:21+00:00"
+      },
+      "hyperparameters": {
+        "dropout": 0.8,
+        "epochs": 200,
+        "hidden": 32,
+        "lr": 0.005,
+        "wd": 0.0005
+      },
+      "metrics": {
+        "test_accuracy_seen": 0.8188235294117647,
+        "train_seconds": 12.062460814995575,
+        "unseen_accuracy": 0.86,
+        "val_accuracy": 0.804,
+        "val_data_id": "25ebcda8ad9b",
+        "val_macro_f1": 0.7901671521796327
+      },
+      "mlflow_run_id": "d72cd045c9b143009ec345f2fad53280",
+      "path": "versions/v10",
+      "registered_at": "2026-10-15T09:10:21+00:00",
+      "run_name": "gcn_h32_lowlr_highdrop",
+      "status": "rejected"
     },
     "v2": {
       "gate": {
@@ -136,6 +252,198 @@
       "path": "versions/v3",
       "registered_at": "2026-10-11T01:16:06+00:00",
       "run_name": "gcn_h32_lowlr_highdrop",
+      "status": "rejected"
+    },
+    "v4": {
+      "gate": {
+        "allowed": false,
+        "approved": 0.7939598869551528,
+        "candidate": 0.7939598869551528,
+        "delta": 0.0,
+        "metric": "val_macro_f1",
+        "reason": "exact tie; tie_policy=block",
+        "rule": "tie",
+        "time": "2026-10-14T16:36:59+00:00"
+      },
+      "hyperparameters": {
+        "dropout": 0.5,
+        "epochs": 200,
+        "hidden": 16,
+        "lr": 0.01,
+        "wd": 0.0005
+      },
+      "metrics": {
+        "test_accuracy_seen": 0.7941176470588235,
+        "train_seconds": 26.95565890999933,
+        "unseen_accuracy": 0.8466666666666667,
+        "val_accuracy": 0.802,
+        "val_data_id": "25ebcda8ad9b",
+        "val_macro_f1": 0.7939598869551528
+      },
+      "mlflow_run_id": "773e6bc39fdd49af85b006776602d51c",
+      "path": "versions/v4",
+      "registered_at": "2026-10-14T16:36:59+00:00",
+      "run_name": "gcn_h16_baseline",
+      "status": "rejected"
+    },
+    "v5": {
+      "gate": {
+        "allowed": false,
+        "approved": 0.7939598869551528,
+        "candidate": 0.7939598869551528,
+        "delta": 0.0,
+        "metric": "val_macro_f1",
+        "reason": "exact tie; tie_policy=block",
+        "rule": "tie",
+        "time": "2026-10-15T03:41:53+00:00"
+      },
+      "hyperparameters": {
+        "dropout": 0.5,
+        "epochs": 200,
+        "hidden": 16,
+        "lr": 0.01,
+        "wd": 0.0005
+      },
+      "metrics": {
+        "test_accuracy_seen": 0.7941176470588235,
+        "train_seconds": 14.69169923300069,
+        "unseen_accuracy": 0.8466666666666667,
+        "val_accuracy": 0.802,
+        "val_data_id": "25ebcda8ad9b",
+        "val_macro_f1": 0.7939598869551528
+      },
+      "mlflow_run_id": "e2bc495259a14b11b983c03fff6ea465",
+      "path": "versions/v5",
+      "registered_at": "2026-10-15T03:41:53+00:00",
+      "run_name": "gcn_h16_baseline",
+      "status": "rejected"
+    },
+    "v6": {
+      "gate": {
+        "allowed": false,
+        "approved": 0.7939598869551528,
+        "candidate": 0.7940792793705475,
+        "delta": 0.00011939241539460355,
+        "metric": "val_macro_f1",
+        "reason": "+0.0001 < required 0.005",
+        "rule": "insufficient_improvement",
+        "time": "2026-10-15T03:42:09+00:00"
+      },
+      "hyperparameters": {
+        "dropout": 0.5,
+        "epochs": 200,
+        "hidden": 64,
+        "lr": 0.01,
+        "wd": 0.0005
+      },
+      "metrics": {
+        "test_accuracy_seen": 0.8070588235294117,
+        "train_seconds": 15.79106544699971,
+        "unseen_accuracy": 0.8533333333333334,
+        "val_accuracy": 0.8,
+        "val_data_id": "25ebcda8ad9b",
+        "val_macro_f1": 0.7940792793705475
+      },
+      "mlflow_run_id": "8f33e407cc974c07bfa9d16db880756b",
+      "path": "versions/v6",
+      "registered_at": "2026-10-15T03:42:09+00:00",
+      "run_name": "gcn_h64_wide",
+      "status": "rejected"
+    },
+    "v7": {
+      "gate": {
+        "allowed": false,
+        "approved": 0.7939598869551528,
+        "candidate": 0.7901671521796327,
+        "delta": -0.0037927347755201124,
+        "metric": "val_macro_f1",
+        "reason": "-0.0038 is worse than the approved model",
+        "rule": "regression",
+        "time": "2026-10-15T03:42:24+00:00"
+      },
+      "hyperparameters": {
+        "dropout": 0.8,
+        "epochs": 200,
+        "hidden": 32,
+        "lr": 0.005,
+        "wd": 0.0005
+      },
+      "metrics": {
+        "test_accuracy_seen": 0.8188235294117647,
+        "train_seconds": 14.76010373600002,
+        "unseen_accuracy": 0.86,
+        "val_accuracy": 0.804,
+        "val_data_id": "25ebcda8ad9b",
+        "val_macro_f1": 0.7901671521796327
+      },
+      "mlflow_run_id": "fe2c9cea337441e8bee65fb22e2d6baf",
+      "path": "versions/v7",
+      "registered_at": "2026-10-15T03:42:24+00:00",
+      "run_name": "gcn_h32_lowlr_highdrop",
+      "status": "rejected"
+    },
+    "v8": {
+      "gate": {
+        "allowed": false,
+        "approved": 0.7939598869551528,
+        "candidate": 0.7939598869551528,
+        "delta": 0.0,
+        "metric": "val_macro_f1",
+        "reason": "exact tie; tie_policy=block",
+        "rule": "tie",
+        "time": "2026-10-15T09:09:51+00:00"
+      },
+      "hyperparameters": {
+        "dropout": 0.5,
+        "epochs": 200,
+        "hidden": 16,
+        "lr": 0.01,
+        "wd": 0.0005
+      },
+      "metrics": {
+        "test_accuracy_seen": 0.7941176470588235,
+        "train_seconds": 17.346818830999837,
+        "unseen_accuracy": 0.8466666666666667,
+        "val_accuracy": 0.802,
+        "val_data_id": "25ebcda8ad9b",
+        "val_macro_f1": 0.7939598869551528
+      },
+      "mlflow_run_id": "b922329ebad74b04a0fe88a7a753fcc0",
+      "path": "versions/v8",
+      "registered_at": "2026-10-15T09:09:51+00:00",
+      "run_name": "gcn_h16_baseline",
+      "status": "rejected"
+    },
+    "v9": {
+      "gate": {
+        "allowed": false,
+        "approved": 0.7939598869551528,
+        "candidate": 0.7940792793705475,
+        "delta": 0.00011939241539460355,
+        "metric": "val_macro_f1",
+        "reason": "+0.0001 < required 0.005",
+        "rule": "insufficient_improvement",
+        "time": "2026-10-15T09:10:08+00:00"
+      },
+      "hyperparameters": {
+        "dropout": 0.5,
+        "epochs": 200,
+        "hidden": 64,
+        "lr": 0.01,
+        "wd": 0.0005
+      },
+      "metrics": {
+        "test_accuracy_seen": 0.8070588235294117,
+        "train_seconds": 16.848117191999336,
+        "unseen_accuracy": 0.8533333333333334,
+        "val_accuracy": 0.8,
+        "val_data_id": "25ebcda8ad9b",
+        "val_macro_f1": 0.7940792793705475
+      },
+      "mlflow_run_id": "fa9817a793cf4c5394936677ebfd1495",
+      "path": "versions/v9",
+      "registered_at": "2026-10-15T09:10:08+00:00",
+      "run_name": "gcn_h64_wide",
       "status": "rejected"
     }
   }

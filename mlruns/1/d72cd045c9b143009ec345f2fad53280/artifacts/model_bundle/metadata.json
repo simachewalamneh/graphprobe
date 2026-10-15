@@ -1,0 +1,16 @@
+{
+  "bundle_id": "ef3f0ae807a1",
+  "code_id": "5920fea846e5",
+  "dataset_id": "7ef06cd63631",
+  "git_sha": "b454c32",
+  "hyperparameters": {
+    "dropout": 0.8,
+    "epochs": 200,
+    "hidden": 32,
+    "lr": 0.005,
+    "wd": 0.0005
+  },
+  "n_unseen": 150,
+  "seed": 0,
+  "weights_sha256": "ef3f0ae807a1ecfc0abd932d69e0fa37367ce6546cda968882deb9ee55efd9e6"
+}

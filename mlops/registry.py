@@ -13,7 +13,7 @@ import numpy as np
 from mlops.bundle import BundleError, load_bundle
 
 
-# ----------------------------------------------------------------------- metrics
+#  metrics
 def macro_f1(y_true, y_pred) -> float:
     f1s = []
     for c in np.unique(y_true):
@@ -23,7 +23,6 @@ def macro_f1(y_true, y_pred) -> float:
         f1s.append(0.0 if tp == 0 else 2 * tp / (2 * tp + fp + fn))
     return float(np.mean(f1s))
 
-
 def evaluate_predictor(pred, val) -> dict:
     """Score a predictor on the shared validation set (same features, graph, node ids, labels)."""
     p = pred.predict_proba(val["features"], val["edge_index"].T)[val["ids"]].argmax(1)
@@ -31,7 +30,7 @@ def evaluate_predictor(pred, val) -> dict:
             "val_data_id": val["data_id"]}
 
 
-# ------------------------------------------------------------------------- gate
+#  gate
 @dataclass
 class GateConfig:
     metric: str = "val_macro_f1"
@@ -50,10 +49,8 @@ class Decision:
     approved: float | None
     delta: float | None
 
-
 def _bad(v) -> bool:
     return v is None or (isinstance(v, float) and math.isnan(v))
-
 
 def evaluate_gate(cand: dict, approved: dict | None, cfg: GateConfig) -> Decision:
     """Rules, evaluated in this order:
@@ -84,7 +81,7 @@ def evaluate_gate(cand: dict, approved: dict | None, cfg: GateConfig) -> Decisio
     return mk(False, "insufficient_improvement", f"+{d:.4f} < required {cfg.min_improvement}", d)
 
 
-# ---------------------------------------------------------------------- registry
+#  registry
 def _now():
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
@@ -105,7 +102,7 @@ class Registry:
         tmp.write_text(json.dumps(st, indent=2, sort_keys=True))
         os.replace(tmp, self.file)
 
-    # ------------------------------------------------------------------ queries
+    #  queries
     @property
     def approved(self):
         return self._load()["approved"]
@@ -122,7 +119,7 @@ class Registry:
             raise BundleError("no approved model in registry")
         return load_bundle(self.bundle_path(v), version=v)
 
-    # ----------------------------------------------------------------- mutations
+    #  mutations
     def register(self, bundle_dir, metrics, extra=None):
         st = self._load()
         v = f"v{len(st['versions']) + 1}"

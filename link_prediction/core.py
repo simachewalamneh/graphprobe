@@ -15,7 +15,7 @@ def set_seed(s):
     random.seed(s); np.random.seed(s); torch.manual_seed(s)
 
 
-# ------------------------------------------------------------------------ splits
+# splits
 def unique_undirected(ei):
     """One row per undirected link (u < v), regardless of how many directions were stored."""
     a = torch.minimum(ei[0], ei[1]); b = torch.maximum(ei[0], ei[1])
@@ -78,7 +78,7 @@ def make_eval_negatives(n, forbidden, split, seed=0):
     return val_neg, test_neg
 
 
-# --------------------------------------------------------------------- the checks
+# the checks
 def leakage_checks(n, mp_ei, split, val_neg, test_neg, full_ei):
     """Automated proofs that held-out links (and reverse copies) are absent from the
     message-passing graph and that negatives are valid and non-overlapping."""
@@ -106,7 +106,7 @@ def leakage_checks(n, mp_ei, split, val_neg, test_neg, full_ei):
     return res
 
 
-# ---------------------------------------------------------------------- the model
+# the model
 class Encoder(nn.Module):
     def __init__(self, i, h, o, dropout):
         super().__init__()
@@ -189,7 +189,7 @@ def train_link(decoder, cfg, x, mp_ei, split, val_neg, test_neg, forbidden, seed
     return model, best
 
 
-# ---------------------------------------------------------------- baseline + utils
+# baseline + utils
 def train_adjacency(n, train_pos):
     A = torch.zeros(n, n)
     A[train_pos[0], train_pos[1]] = 1.0

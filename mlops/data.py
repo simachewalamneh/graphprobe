@@ -42,7 +42,6 @@ def make_synthetic(n=300, f=60, c=3, seed=0):
     masks["test_mask"][perm[n // 2:]] = True
     return dict(x=x, edge_index=np.stack([s, d]).astype(np.int64), y=y.astype(np.int64), **masks)
 
-
 def load_snapshot(kind="cora"):
     if kind == "synthetic":
         return make_synthetic()

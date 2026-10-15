@@ -13,16 +13,16 @@
       "null_std": 0.014077778140546983
     },
     "embedding_centroid_cosine_distance": {
-      "threshold": 0.001297779201960868,
-      "p99": 0.001317156553268435,
-      "null_mean": 0.0004301321506500244,
-      "null_std": 0.0002892156837702811
+      "threshold": 0.001297775666567211,
+      "p99": 0.0013170975446701076,
+      "null_mean": 0.00043013036251068117,
+      "null_std": 0.00028921510135217665
     },
     "mean_embedding_norm_rel_change": {
-      "threshold": 0.03319325331001035,
-      "p99": 0.03173676694403455,
-      "null_mean": 0.010244197995397102,
-      "null_std": 0.007649685104871082
+      "threshold": 0.033193279556039026,
+      "p99": 0.031736767721581724,
+      "null_mean": 0.010244204062215661,
+      "null_std": 0.007649691831274455
     }
   },
   "normal (new random half of same data)": [
@@ -104,8 +104,8 @@
     }
   ],
   "cross_version_embedding_comparison": {
-    "mean |corr| of same-index coordinates": 0.3425457981515362,
+    "mean |corr| of same-index coordinates": 0.3425457993098451,
     "cosine of centroids (raw coordinates)": 0.973680853843689,
-    "linear CKA (rotation/permutation invariant)": 0.9342880249023438
+    "linear CKA (rotation/permutation invariant)": 0.9342880845069885
   }
 }

@@ -1,0 +1,7 @@
+{
+  "dropout": 0.5,
+  "hidden": 64,
+  "in": 1433,
+  "out": 7,
+  "type": "scratch_gcn"
+}

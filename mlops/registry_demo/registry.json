@@ -1,0 +1,192 @@
+{
+  "approved": "v1",
+  "events": [
+    {
+      "action": "register",
+      "time": "2026-10-15T10:12:49+00:00",
+      "version": "v1"
+    },
+    {
+      "action": "promote_attempt",
+      "allowed": true,
+      "rule": "first_model",
+      "time": "2026-10-15T10:12:49+00:00",
+      "version": "v1"
+    },
+    {
+      "action": "register",
+      "time": "2026-10-15T10:13:13+00:00",
+      "version": "v2"
+    },
+    {
+      "action": "promote_attempt",
+      "allowed": true,
+      "rule": "improvement",
+      "time": "2026-10-15T10:13:14+00:00",
+      "version": "v2"
+    },
+    {
+      "action": "register",
+      "time": "2026-10-15T10:13:14+00:00",
+      "version": "v3"
+    },
+    {
+      "action": "promote_attempt",
+      "allowed": false,
+      "rule": "regression",
+      "time": "2026-10-15T10:13:15+00:00",
+      "version": "v3"
+    },
+    {
+      "action": "register",
+      "time": "2026-10-15T10:13:40+00:00",
+      "version": "v4"
+    },
+    {
+      "action": "promote_attempt",
+      "allowed": false,
+      "rule": "tie",
+      "time": "2026-10-15T10:13:40+00:00",
+      "version": "v4"
+    },
+    {
+      "action": "rollback",
+      "from": "v2",
+      "time": "2026-10-15T10:13:40+00:00",
+      "to": "v1"
+    }
+  ],
+  "history": [
+    "v1"
+  ],
+  "versions": {
+    "v1": {
+      "gate": {
+        "allowed": true,
+        "approved": null,
+        "candidate": 0.7350472795124021,
+        "delta": null,
+        "metric": "val_macro_f1",
+        "reason": "first model: 0.7350 >= floor 0.7",
+        "rule": "first_model",
+        "time": "2026-10-15T10:12:49+00:00"
+      },
+      "hyperparameters": {
+        "dropout": 0.5,
+        "epochs": 60,
+        "hidden": 16,
+        "lr": 0.01,
+        "wd": 0.0005
+      },
+      "metrics": {
+        "test_accuracy_seen": 0.7482352941176471,
+        "train_seconds": 15.968994262999331,
+        "unseen_accuracy": 0.7666666666666667,
+        "val_accuracy": 0.744,
+        "val_data_id": "25ebcda8ad9b",
+        "val_macro_f1": 0.7350472795124021
+      },
+      "mlflow_run_id": "834a1bb80c684860bcd24e4415019d33",
+      "path": "versions/v1",
+      "registered_at": "2026-10-15T10:12:49+00:00",
+      "run_name": "weak_h16_60epochs",
+      "status": "approved"
+    },
+    "v2": {
+      "gate": {
+        "allowed": true,
+        "approved": 0.7350472795124021,
+        "candidate": 0.7940792793705475,
+        "delta": 0.059031999858145334,
+        "metric": "val_macro_f1",
+        "reason": "+0.0590 >= required 0.005",
+        "rule": "improvement",
+        "time": "2026-10-15T10:13:14+00:00"
+      },
+      "hyperparameters": {
+        "dropout": 0.5,
+        "epochs": 200,
+        "hidden": 64,
+        "lr": 0.01,
+        "wd": 0.0005
+      },
+      "metrics": {
+        "test_accuracy_seen": 0.8070588235294117,
+        "train_seconds": 23.343447152001318,
+        "unseen_accuracy": 0.8533333333333334,
+        "val_accuracy": 0.8,
+        "val_data_id": "25ebcda8ad9b",
+        "val_macro_f1": 0.7940792793705475
+      },
+      "mlflow_run_id": "6fe8d63a3c97499790f13a9f5e5fda8d",
+      "path": "versions/v2",
+      "registered_at": "2026-10-15T10:13:13+00:00",
+      "run_name": "gcn_h64_wide",
+      "status": "rolled_back"
+    },
+    "v3": {
+      "gate": {
+        "allowed": false,
+        "approved": 0.7940792793705475,
+        "candidate": 0.3304360319020363,
+        "delta": -0.46364324746851115,
+        "metric": "val_macro_f1",
+        "reason": "-0.4636 is worse than the approved model",
+        "rule": "regression",
+        "time": "2026-10-15T10:13:15+00:00"
+      },
+      "hyperparameters": {
+        "dropout": 0.5,
+        "epochs": 3,
+        "hidden": 16,
+        "lr": 0.01,
+        "wd": 0.0005
+      },
+      "metrics": {
+        "test_accuracy_seen": 0.4023529411764706,
+        "train_seconds": 0.34313469199696556,
+        "unseen_accuracy": 0.44666666666666666,
+        "val_accuracy": 0.374,
+        "val_data_id": "25ebcda8ad9b",
+        "val_macro_f1": 0.3304360319020363
+      },
+      "mlflow_run_id": "f47910746e864aa7a96bf62c34aa31fb",
+      "path": "versions/v3",
+      "registered_at": "2026-10-15T10:13:14+00:00",
+      "run_name": "undertrained_3_epochs",
+      "status": "rejected"
+    },
+    "v4": {
+      "gate": {
+        "allowed": false,
+        "approved": 0.7940792793705475,
+        "candidate": 0.7940792793705475,
+        "delta": 0.0,
+        "metric": "val_macro_f1",
+        "reason": "exact tie; tie_policy=block",
+        "rule": "tie",
+        "time": "2026-10-15T10:13:40+00:00"
+      },
+      "hyperparameters": {
+        "dropout": 0.5,
+        "epochs": 200,
+        "hidden": 64,
+        "lr": 0.01,
+        "wd": 0.0005
+      },
+      "metrics": {
+        "test_accuracy_seen": 0.8070588235294117,
+        "train_seconds": 24.4939263999986,
+        "unseen_accuracy": 0.8533333333333334,
+        "val_accuracy": 0.8,
+        "val_data_id": "25ebcda8ad9b",
+        "val_macro_f1": 0.7940792793705475
+      },
+      "mlflow_run_id": "5ad8f79d9ca647bd81e14688a064d0d8",
+      "path": "versions/v4",
+      "registered_at": "2026-10-15T10:13:40+00:00",
+      "run_name": "gcn_h64_wide_again",
+      "status": "rejected"
+    }
+  }
+}
